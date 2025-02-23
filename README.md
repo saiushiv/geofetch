@@ -1,13 +1,14 @@
 # geofetch: a Python library for fetching geo location data
 
-| --- | --- |
-| Version | v1.0 |
+| Attempt | #1    |
+| :-----: | :---: |
+| Version | v1.0  |
 
 
 ## What is it?
 
 **geofetch** is a lightweight Python package that fetches geolocation coordinates from 
-Geocoding API from Openweather.
+Geocoding API from [Openweather](https://openweathermap.org/api/geocoding-api).
 
 Note: In version v1.0 the package only supports US locations.
 
