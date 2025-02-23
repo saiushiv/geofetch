@@ -14,4 +14,7 @@ setup(
             'geofetch=src.cli:main',  # This makes the CLI available as a command
         ],
     },
+    author="Sai Upadhyay",
+    description="A python package to fetch geographical coordinates",
+    python_requires=">=3.6",
 )
