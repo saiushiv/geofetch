@@ -5,11 +5,11 @@ from src.utils.validate_util import validate_input
 from src.utils.logger import logger
 
 def main():
-    input_list = sys.argv[1:]  # Get the list of strings from locations from CLI arguments
+    # Get the list of strings of locations from CLI arguments
+    input_list = sys.argv[1:]
 
     if not input_list:
-        logger.error("Invalid input. Please provide a valid list of location.")
-        return
+        raise ValueError("Invalid input. Please provide a valid list of locations.")
     
     # Load the API configuration
     config = GeoAPIConfig()
@@ -18,15 +18,11 @@ def main():
     api_handler = GeoAPIHandler(config)
 
     for input_str in input_list:
-        input_str = validate_input(input_str)  # Verify and clean the input string
+        # Verify and clean the input string
+        input_str = validate_input(input_str)
         
         # Decide which API to hit based on string length
-        if input_str == "invalid":
-            continue # Skip to the next input string
-        elif len(input_str) == 5:
-            endpoint = "zip" # Use the zip code endpoint for 5-character US zip strings
-        else:
-            endpoint = "direct" # Use the direct endpoint for fetch direct location using city name
+        endpoint = "zip" if len(input_str) == 5 and input_str.isdigit() else "direct"
 
         # Call the appropriate API
         response = api_handler.get_data(endpoint, input_str)

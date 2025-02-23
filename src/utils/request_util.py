@@ -21,5 +21,8 @@ def make_request(base_url, endpoint, api_key, input_data):
     # Return the JSON response if successful, else an error message
     if response.status_code == 200:
         response_json = response.json()
-        return response_json[0] if isinstance(response_json, list) and response_json else response_json
+        if isinstance(response_json, list) and response_json:  # Ensure it's a non-empty list
+            return response_json[0]
+        return response_json or {"error": "Invalid input. Empty response received"}  # Handle empty JSON response
+
     return {"error": f"Request failed with status {response.status_code}"}

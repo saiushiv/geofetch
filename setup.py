@@ -11,10 +11,11 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'geofetch=src.cli:main',  # This makes the CLI available as a command
+            # This makes the geofetch available as CLI command
+            'geofetch=src.cli:main',  
         ],
     },
     author="Sai Upadhyay",
     description="A python package to fetch geographical coordinates",
-    python_requires=">=3.6",
+    python_requires=">=3.11.0",
 )

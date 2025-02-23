@@ -7,11 +7,9 @@ def validate_input(input_str: str) -> str:
         if len(parts) == 2:
             return f"{parts[0]},{parts[1]},US"
         else:
-            logger.error("Invalid City Name. Please provide city name as 'city,state'.")
-            return "invalid"
+            raise ValueError("Invalid City Name. Please provide city name as 'city,state'.")
     elif len(input_str) == 5:
         return input_str
     else:
-        logger.error("Invalid Location. Please check location. US Zip code should be 5 characters long "
+        raise ValueError("Invalid Location. Please check location. US Zip code should be 5 characters long "
               "and if providing city name, please provide as 'city,state'.")
-        return "invalid"
