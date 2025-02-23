@@ -21,9 +21,5 @@ def make_request(base_url, endpoint, api_key, input_data):
     # Return the JSON response if successful, else an error message
     if response.status_code == 200:
         response_json = response.json()
-        if isinstance(response_json,list):
-            return response_json[0]
-        else:
-            return response_json
-    else:
-        return {"error": f"Request failed with status {response.status_code}"}
+        return response_json[0] if isinstance(response_json, list) and response_json else response_json
+    return {"error": f"Request failed with status {response.status_code}"}

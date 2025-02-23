@@ -4,7 +4,9 @@ class GeoAPIHandler:
     def __init__(self, config):
         self.config = config
 
-    def get_data(self, endpoint_type, input_data):
+    def get_data(self, endpoint_type, input_data) -> dict:
+        """Get data from the API based on the endpoint type and input data."""
+        
         # Determine the endpoint URL based on the type
         if endpoint_type == "zip":
             endpoint = "/zip"
