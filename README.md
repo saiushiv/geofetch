@@ -1,8 +1,10 @@
 # geofetch: a Python library for fetching geo location data
 
-| Attempt | #1    |
+| Release | Details |
 | :-----: | :---: |
 | Version | v1.0  |
+| :-----: | :---: |
+| Date | 02/22/2025  |
 
 
 ## What is it?
