@@ -1,14 +1,14 @@
 import sys
 from src.handlers.api_handler import GeoAPIHandler
 from src.config.api_config import GeoAPIConfig
-from src.utils.request_util import make_request
 from src.utils.validate_util import validate_input
+from src.utils.logger import logger
 
 def main():
     input_list = sys.argv[1:]  # Get the list of strings from locations from CLI arguments
 
     if not input_list:
-        print("Invalid input. Please provide a valid list of location.")
+        logger.error("Invalid input. Please provide a valid list of location.")
         return
     
     # Load the API configuration
@@ -30,7 +30,7 @@ def main():
 
         # Call the appropriate API
         response = api_handler.get_data(endpoint, input_str)
-        print(f"Response for '{input_str}': {response}")
+        logger.info(f"Response for '{input_str}': {response}")
 
 if __name__ == "__main__":
     main()
