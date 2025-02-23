@@ -32,7 +32,7 @@ def test_direct_endpoint_integration(api_handler, validated_input):
     assert response["lon"] == -89.3837613
 
 def test_invalid_zip_input(validated_input):
-    """Test to validate input with invalid zip code."""
+    """Test to validate input with invalid zip code. US zip needs to be of 5 digits"""
     with pytest.raises(ValueError) as e:
        validated_input("100")
     assert "Invalid Location" in str(e.value)
@@ -45,7 +45,7 @@ def test_invalid_location_input(validated_input):
 
 def test_zip_empty_response(api_handler, validated_input):
     """Test real integration with the 'zip' endpoint with invalid zip code."""
-    input_str = validated_input("10000")
+    input_str = validated_input("11000")
     response = api_handler.get_data("zip", input_str)
     assert response["error"] == "Request failed with status 404"
 
@@ -61,9 +61,21 @@ def test_zip_alphanumeric_input(api_handler, validated_input):
     response = api_handler.get_data("zip", input_str)
     assert response["error"] == "Request failed with status 404"
 
-def test_direct_alphanumeric_response(api_handler, validated_input):
+def test_direct_alphanumeric_input(api_handler, validated_input):
     """Test real integration with the 'direct' endpoint with invalid alphanumeric city name."""
     input_str = validated_input("Madison100, WI")
+    response = api_handler.get_data("direct", input_str)
+    assert response["error"] == "Invalid input. Empty response received"
+
+def test_direct_empty_input1(api_handler, validated_input):
+    """Test real integration with the 'direct' endpoint with invalid empty input."""
+    input_str = validated_input(""     ",")
+    response = api_handler.get_data("direct", input_str)
+    assert response["error"] == "Request failed with status 404"
+
+def test_direct_empty_input2(api_handler, validated_input):
+    """Test real integration with the 'direct' endpoint with invalid empty input."""
+    input_str = validated_input('"     ",')
     response = api_handler.get_data("direct", input_str)
     assert response["error"] == "Invalid input. Empty response received"
 
