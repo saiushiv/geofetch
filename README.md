@@ -162,10 +162,11 @@ $>   pytest
 
 ## How to import this package in other projects
 
-You can import the GeoFetch class from the geofetch module in your project:
+You can import the GeoFetch class from the geofetch module in your project. 
+Like create a a new file in the geofetch directory (same one where you found this file after cloning the git repo), execute:
 
 ```py
-from geofetch import GeoFetch
+from src.geofetch import GeoFetch
 
 geo_fetch = GeoFetch()
 results = geo_fetch.fetch_data(["10001", "Madison, WI"])
