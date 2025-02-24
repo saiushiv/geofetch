@@ -26,6 +26,7 @@ Geocoding API from [Openweather](https://openweathermap.org/api/geocoding-api).
 - [Tool usage examples](#tool-usage-examples)
 - [How to run the tests](#how-to-run-the-tests)
 - [How to import this package in other projects](#how-to-import-this-package-in-other-projects)
+- [To uninstall the CLI tool](#to-uninstall-the-cli-tool)
 
 ## Main Features
 Here are just a few of the things that geofetch does well:
