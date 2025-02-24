@@ -37,28 +37,44 @@ The source code is currently hosted on GitHub at:
 https://github.com/saiushiv/geofetch
 
 ## Dependencies
-Lists the dependencies required by the project.
+
 - `pytest`: For running tests.
 - `requests`: For making HTTP requests to the API.
 
 ## PreRequisites
-Lists the prerequisites needed to run the project.
+
 - Python 3.11 or higher.
 - `pytest`: For running tests.
 - `requests`: For making HTTP requests to the API.
 
 ## Assumptions and Limitations
-Lists the assumptions and limitations of the project.
+
 - The package currently only supports US locations.
 - The input should be either a valid US zip code or a city and state combination in the format `city,state`.
 
 ## Project Structure
-Provides an overview of the project's directory structure.
 
-geofetch/ ├── src/ │ ├── cli.py │ ├── config/ │ │ └── api_config.py │ ├── handlers/ │ │ └── api_handler.py │ ├── utils/ │ │ ├── logger.py │ │ ├── request_util.py │ │ └── validate_util.py │ └── geofetch.py ├── tests/ │ ├── integration/ │ │ └── test_api_integration.py │ └── unit/ │ └── test_validate_util.py ├── README.md ├── setup.py └──
+geofetch/ 
+├── src/ 
+│ ├── cli.py                        # CLI entry point for the geofetch CLI tool
+│ ├── config/ 
+│ │ └── api_config.py               # Configuration for the Geo API
+│ ├── handlers/ 
+│ │ └── api_handler.py              # Handler for interacting with the Geo API
+│ ├── utils/ 
+│ │ ├── logger.py                   # Logging configuration
+│ │ ├── request_util.py             # Utility for making API requests
+│ │ └── validate_util.py            # Utility for validating input
+│ └── geofetch.py                   # Core functionality for fetching geo data
+├── tests/ 
+│ ├── integration/ 
+│ │ └── test_api_integration.py     # Integration tests for the API
+│ 
+├── README.md                       # Project documentation
+├── setup.py                        # Setup script for installing the package
+└── requirements.txt                # List of devlopment dependencies
 
 ## Installation
-Provides instructions on how to install the package and CLI tool.
 
 In the `geofetch` directory (same one where you found this file after
 cloning the git repo), execute:
@@ -68,7 +84,6 @@ pip install .
 ```
 
 ## How to run the CLI tool
-Provides instructions on how to run the CLI tool.
 
 In the geofetch directory (same one where you found this file after cloning the git repo), execute:
 
@@ -77,7 +92,7 @@ geofetch "New York, NY" "90210"
 ```
 
 ## How to run the tests
-Provides instructions on how to run the tests.
+
 In the geofetch directory (same one where you found this file after cloning the git repo), execute:
 
 ```sh
@@ -85,8 +100,6 @@ pytest
 ```
 
 ## How to import this package in other projects
-
-Provides instructions on how to import and use the package in other projects.
 
 You can import the GeoFetch class from the geofetch module in your project:
 
