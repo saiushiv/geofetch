@@ -23,6 +23,7 @@ Geocoding API from [Openweather](https://openweathermap.org/api/geocoding-api).
 - [Project Structure](#project-structure)
 - [Installation](#installation)
 - [How to run the CLI tool](#how-to-run-the-cli-tool)
+- [Tool usage examples](#tool-usage-examples)
 - [How to run the tests](#how-to-run-the-tests)
 - [How to import this package in other projects](#how-to-import-this-package-in-other-projects)
 
