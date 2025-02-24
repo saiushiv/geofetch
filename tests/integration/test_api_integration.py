@@ -3,6 +3,13 @@ from src.handlers.api_handler import GeoAPIHandler
 from src.config.api_config import GeoAPIConfig
 from src.utils.validate_util import validate_input
 
+"""
+Integration tests for the GeoFetch package.
+These tests validate the integration of various components of the GeoFetch package,
+including the API handler and input validation utilities. The tests make real API
+calls to ensure that the components work together as expected.
+"""
+
 @pytest.fixture
 def api_handler():
     """Fixture to create an APIHandler instance with real API config."""
