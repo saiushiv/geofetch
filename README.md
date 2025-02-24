@@ -41,11 +41,15 @@ https://github.com/saiushiv/geofetch
 - `pytest`: For running tests.
 - `requests`: For making HTTP requests to the API.
 
-## PreRequisites
+## Prerequisites
 
-- Python 3.11 or higher.
+- `Python` v3.11.0 or higher.
 - `pytest`: For running tests.
 - `requests`: For making HTTP requests to the API.
+- **API Key**: You must set the `GEOFETCH_API_KEY` environment variable with your API key from OpenWeather. API key can be set as :
+```sh
+$>  export GEOFETCH_API_KEY=<YOUR API KEY HERE>
+```
 
 ## Assumptions and Limitations
 
@@ -82,7 +86,7 @@ In the `geofetch` directory (same one where you found this file after
 cloning the git repo), execute:
 
 ```sh
-pip install .
+$>  pip install .
 ```
 
 ## How to run the CLI tool
@@ -90,7 +94,7 @@ pip install .
 In the geofetch directory (same one where you found this file after cloning the git repo), execute:
 
 ```sh
-geofetch "New York, NY" "90210"
+$>   geofetch "New York, NY" "90210"
 ```
 
 ## How to run the tests
@@ -98,7 +102,7 @@ geofetch "New York, NY" "90210"
 In the geofetch directory (same one where you found this file after cloning the git repo), execute:
 
 ```sh
-pytest
+$>   pytest
 ```
 
 ## How to import this package in other projects
