@@ -47,7 +47,8 @@ https://github.com/saiushiv/geofetch
 - `Python` v3.11.0 or higher.
 - `pytest`: For running tests.
 - `requests`: For making HTTP requests to the API.
-- **API Key**: You must set the `GEOFETCH_API_KEY` environment variable with your API key from OpenWeather. API key can be set as :
+- **API Key**: You must set the `GEOFETCH_API_KEY` environment variable with your API key from OpenWeather in your local machine/environment.
+  API key can be set as :
 ```sh
 $>  export GEOFETCH_API_KEY=<YOUR API KEY HERE>
 ```
