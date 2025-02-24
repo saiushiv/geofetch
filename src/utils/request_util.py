@@ -26,11 +26,13 @@ def make_request(base_url, endpoint, api_key, input_data):
     if endpoint == "/zip":
         params = {
             "zip": input_data,
+            "limit": 1,
             "appid": api_key,
         }
     else:
         params = {
             "q": input_data,
+            "limit": 1,
             "appid": api_key,
         }
 
@@ -39,12 +41,6 @@ def make_request(base_url, endpoint, api_key, input_data):
 
     # Return the JSON response if successful, else an error message
     if response.status_code == 200:
-        response_json = response.json()
-         
-        # Ensure it's a non-empty list
-        if isinstance(response_json, list) and response_json: 
-            return response_json[0]
-        # Handle empty JSON response
-        return response_json or {"error": "Invalid input. Empty response received"}
-
-    return {"error": f"Request failed with status {response.status_code}"}
+        return response.json() or {"error": "Invalid input. Empty response received"}
+    else:     
+        return {"error": f"Request failed with status {response.status_code}"}

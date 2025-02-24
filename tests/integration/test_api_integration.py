@@ -27,9 +27,10 @@ def test_direct_endpoint_integration(api_handler, validated_input):
     """Test real integration with the 'direct' endpoint."""
     input_str = validated_input("Madison, WI")
     response = api_handler.get_data("direct", input_str)
-    assert response["name"] == "Madison"
-    assert response["lat"] == 43.074761
-    assert response["lon"] == -89.3837613
+    # Response is a list of dictionaries. so the first one is checked
+    assert response[0]["name"] == "Madison"
+    assert response[0]["lat"] == 43.074761
+    assert response[0]["lon"] == -89.3837613
 
 def test_invalid_zip_input(validated_input):
     """Test to validate input with invalid zip code. US zip needs to be of 5 digits"""
