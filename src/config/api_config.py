@@ -21,7 +21,6 @@ class GeoAPIConfig:
             ValueError: If the API key is not found in the environment variables.
         """
         self.base_url = "http://api.openweathermap.org/geo/1.0"
-        # Retrieve API key from environment variable
         self.api_key = os.getenv("GEOFETCH_API_KEY")  
         
         if not self.api_key:

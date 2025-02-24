@@ -170,3 +170,11 @@ geo_fetch = GeoFetch()
 results = geo_fetch.fetch_data(["10001", "Madison, WI"])
 print(results)
 ```
+
+## To uninstall the CLI tool
+
+In the geofetch directory (same one where you found this file after cloning the git repo), execute:
+
+```sh
+$>   pip uninstall geofetch_cli_util
+```
