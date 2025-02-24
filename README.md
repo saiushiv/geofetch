@@ -54,6 +54,7 @@ https://github.com/saiushiv/geofetch
 
 ## Project Structure
 
+```
 geofetch/ 
 ├── src/ 
 │ ├── cli.py                        # CLI entry point for the geofetch CLI tool
@@ -73,6 +74,7 @@ geofetch/
 ├── README.md                       # Project documentation
 ├── setup.py                        # Setup script for installing the package
 └── requirements.txt                # List of devlopment dependencies
+```
 
 ## Installation
 
